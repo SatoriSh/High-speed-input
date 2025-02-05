@@ -1,0 +1,49 @@
+﻿<Window x:Class="high_speed_input.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:high_speed_input"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Title="high-speed input" Height="430" Width="400">
+        
+    <Grid Background="Ivory">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="3*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70*"></RowDefinition>
+            <RowDefinition Height="70*"></RowDefinition>
+            <RowDefinition Height="70*"></RowDefinition>
+            <RowDefinition Height="70*"></RowDefinition>
+            <RowDefinition Height="41*"></RowDefinition>
+            <RowDefinition Height="41*"></RowDefinition>
+            <RowDefinition Height="41*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Button    Background="Moccasin" FontWeight="SemiBold" IsDefault="True" Click="startButton" Grid.Column="0" Grid.Row="0" FontSize="25"  Grid.ColumnSpan="3">Стоп>'Enter'</Button>
+        <TextBlock FontWeight="SemiBold" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Center" FontSize="19" Height="27" Width="56">Слово</TextBlock>
+        <TextBlock x:Name="rndWord" FontWeight="SemiBold" HorizontalAlignment="Center" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" FontSize="22"></TextBlock>
+        <TextBlock FontWeight="SemiBold" HorizontalAlignment="Center" Grid.Row="2" VerticalAlignment="Center" FontSize="19" Height="27" Width="58">Время</TextBlock>
+        <TextBlock FontWeight="SemiBold" x:Name="clockTextBlock" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="1" Grid.Row="2" FontSize="25" Height="33" Width="117" Text="0,000" Margin="84,0,0,0"></TextBlock>
+        <TextBlock FontWeight="SemiBold" Grid.Row="3" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="19" Height="26" Width="44">Ввод</TextBlock>
+        <TextBox   Background="AntiqueWhite" x:Name="userText" FontWeight="SemiBold" FontSize="25" VerticalAlignment="Center" Grid.Column="1" Grid.Row="3" Height="36"></TextBox>
+        <TextBlock FontWeight="SemiBold" FontSize="14.5"  HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="5" >Результаты</TextBlock>
+
+        <TextBlock FontSize="15" VerticalAlignment="center" Grid.Column="1" Grid.Row="4" xml:space="preserve" >  Успешно написанных слов:</TextBlock>
+        <TextBlock FontSize="15" VerticalAlignment="center" Grid.Column="1" Grid.Row="5" xml:space="preserve" >  Неудачно написанных слов:</TextBlock>
+        <TextBlock FontSize="15" VerticalAlignment="center" Grid.Column="1" Grid.Row="6" xml:space="preserve" >  Лучшая скорость:</TextBlock>
+
+        <TextBlock x:Name="successful" Grid.Row="4" Grid.Column="2" VerticalAlignment="center" HorizontalAlignment="center" FontSize="20">0</TextBlock>
+        <TextBlock x:Name="fail" Grid.Row="5" Grid.Column="2" VerticalAlignment="center" HorizontalAlignment="center" FontSize="20">0</TextBlock>
+        <TextBlock x:Name="bestTime" Grid.Row="6" Grid.Column="2" VerticalAlignment="center" HorizontalAlignment="center" FontSize="20">?сек</TextBlock>
+
+        <Button    Background="#7FC7FF" FontSize="15" FontWeight="SemiBold" IsDefault="False" VerticalAlignment="Center" HorizontalAlignment="center" x:Name="timeToCatchUp" Click="timeToCatchUpButton" Grid.Row="2" Grid.Column="2" MinHeight="45" MinWidth="54"></Button>
+        <Button    Background="#7FC7FF" FontSize="15" FontWeight="SemiBold" IsDefault="False" VerticalAlignment="Center" HorizontalAlignment="center" x:Name="howManyLetters" Click="howManyLettersButton" Grid.Row="1" Grid.Column="2" MinHeight="23" MinWidth="64"></Button>
+    </Grid>
+</Window>
